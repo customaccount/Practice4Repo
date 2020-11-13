@@ -1,0 +1,10 @@
+C:\source\repos\Debug-App-DB\Debug-App-DB\bin\Debug\Debug-App-DB.dacpac
+C:\source\repos\Debug-App-DB\Debug-App-DB\bin\Debug\Debug_App_DB.dll
+C:\source\repos\Debug-App-DB\Debug-App-DB\bin\Debug\Debug_App_DB.pdb
+C:\source\repos\Debug-App-DB\Debug-App-DB\obj\Debug\Debug-App-DB.sqlprojAssemblyReference.cache
+C:\source\repos\Debug-App-DB\Debug-App-DB\obj\Debug\Model.xml
+C:\source\repos\Debug-App-DB\Debug-App-DB\obj\Debug\refactor.xml
+C:\source\repos\Debug-App-DB\Debug-App-DB\obj\Debug\postdeploy.sql
+C:\source\repos\Debug-App-DB\Debug-App-DB\obj\Debug\predeploy.sql
+C:\source\repos\Debug-App-DB\Debug-App-DB\obj\Debug\Debug_App_DB.dll
+C:\source\repos\Debug-App-DB\Debug-App-DB\obj\Debug\Debug_App_DB.pdb
