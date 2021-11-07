@@ -29,7 +29,7 @@ namespace Remote_Debug_App.Controllers
             DebugTable table = _context.DebugTables.FirstOrDefault(it => it.RandomGuid == number);
             if(table == null)
             {
-                XmlSerializer serializer =  new XmlSerializer(typeof(DebugSerrializedModel), null, null, new XmlRootAttribute("debug-app-model"), string.Empty);
+                XmlSerializer serializer =  new XmlSerializer(typeof(DebugSerrializedModel), new XmlRootAttribute("debug-app-model"));
 
                 MemoryStream stream = new MemoryStream();
 
