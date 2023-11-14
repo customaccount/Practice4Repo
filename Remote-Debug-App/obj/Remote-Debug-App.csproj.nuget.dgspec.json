@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\source\\repos\\Remote-Debug-App\\Remote-Debug-App\\Remote-Debug-App.csproj": {}
+    "D:\\repos\\Practice4Repo\\Remote-Debug-App\\Remote-Debug-App.csproj": {}
   },
   "projects": {
-    "C:\\source\\repos\\Remote-Debug-App\\Remote-Debug-App\\Remote-Debug-App.csproj": {
+    "D:\\repos\\Practice4Repo\\Remote-Debug-App\\Remote-Debug-App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\source\\repos\\Remote-Debug-App\\Remote-Debug-App\\Remote-Debug-App.csproj",
+        "projectUniqueName": "D:\\repos\\Practice4Repo\\Remote-Debug-App\\Remote-Debug-App.csproj",
         "projectName": "Remote-Debug-App",
-        "projectPath": "C:\\source\\repos\\Remote-Debug-App\\Remote-Debug-App\\Remote-Debug-App.csproj",
-        "packagesPath": "C:\\Users\\tomas\\.nuget\\packages\\",
-        "outputPath": "C:\\source\\repos\\Remote-Debug-App\\Remote-Debug-App\\obj\\",
+        "projectPath": "D:\\repos\\Practice4Repo\\Remote-Debug-App\\Remote-Debug-App.csproj",
+        "packagesPath": "C:\\Users\\olegfrolov\\.nuget\\packages\\",
+        "outputPath": "D:\\repos\\Practice4Repo\\Remote-Debug-App\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\tomas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\olegfrolov\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,10 +22,13 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://cgimyq.pkgs.visualstudio.com/DefaultCollection/_packaging/core-framework/nuget/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +40,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -59,7 +63,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -71,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,12 +1,12 @@
 #See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
-FROM trainingazure/asp.net:3.1.20 AS base
+FROM trainingazure/asp.net:6.0.24 AS base
 
 RUN mkdir -p /home/LogFiles /opt/startup \
      && echo "root:Docker!" | chpasswd \
      && echo "cd /home" >> /etc/bash.bashrc \
      && apt-get update \  
-     && apt-get install --yes --no-install-recommends openssh-server vim curl wget tcptraceroute openrc
+     && apt-get install --yes --no-install-recommends openssh-server vim curl wget tcptraceroute 
 
 RUN rm -f /etc/ssh/sshd_config
 RUN mkdir -p /tmp
@@ -26,7 +26,7 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["Remote-Debug-App/Remote-Debug-App.csproj", "Remote-Debug-App/"]
 RUN dotnet restore "Remote-Debug-App/Remote-Debug-App.csproj"
