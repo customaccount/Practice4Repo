@@ -33,10 +33,10 @@ RUN dotnet restore "Remote-Debug-App/Remote-Debug-App.csproj"
 
 COPY . .
 WORKDIR "/src/Remote-Debug-App"
-RUN dotnet build "Remote-Debug-App.csproj" -c Release -o /app/build
+RUN dotnet build "Remote-Debug-App.csproj" -c Debug -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Remote-Debug-App.csproj" -c Release -o /app/publish
+RUN dotnet publish "Remote-Debug-App.csproj" -c Debug -o /app/publish
 
 
 FROM base AS final
@@ -49,7 +49,11 @@ RUN chmod +x /usr/local/bin/launch.sh
 
 RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 RUN  apt-get update \
+     && apt-get install --yes -y dotnet-sdk-6.0 \
      && apt-get install --yes --no-install-recommends  ca-certificates curl apt-transport-https lsb-release gnupg
+
+RUN dotnet tool install --global dotnet-dump
+
 RUN curl -sL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null
 
 ENV AZ_REPO $(lsb_release -cs)

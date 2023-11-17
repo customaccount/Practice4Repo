@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Remote_Debug_App.Models
 {
-    public class DebugSerrializedModel
+    public class DebugSerializedModel
     {
-        public DebugSerrializedModel()
+        public DebugSerializedModel()
         {
             guid1 = Guid.NewGuid();
             guid2 = Guid.NewGuid();

@@ -1,5 +1,3 @@
-using System;
-
 namespace Remote_Debug_App.Models
 {
     public class ErrorViewModel
