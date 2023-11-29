@@ -1,6 +1,6 @@
 #See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
-FROM trainingazure/asp.net:6.0.24 AS base
+FROM trainingazure/asp.net:6.0.25 AS base
 
 RUN mkdir -p /home/LogFiles /opt/startup \
      && echo "root:Docker!" | chpasswd \
@@ -26,7 +26,7 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+FROM trainingazure/dotnet:6.0.25 AS build
 WORKDIR /src
 COPY ["Remote-Debug-App/Remote-Debug-App.csproj", "Remote-Debug-App/"]
 RUN dotnet restore "Remote-Debug-App/Remote-Debug-App.csproj"
@@ -47,14 +47,18 @@ COPY --from=publish /app/publish .
 COPY ./Remote-Debug-App/launch.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/launch.sh
 
+RUN wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb \
+    && dpkg -i packages-microsoft-prod.deb \
+    && rm packages-microsoft-prod.deb
+
 RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 RUN  apt-get update \
-     && apt-get install --yes -y dotnet-sdk-6.0 \
-     && apt-get install --yes --no-install-recommends  ca-certificates curl apt-transport-https lsb-release gnupg
-
-RUN dotnet tool install --global dotnet-dump
+     && apt-get install --yes dotnet-sdk-8.0 \
+     && apt-get install --yes --no-install-recommends  ca-certificates curl apt-transport-https lsb-release gnupg \
+     && dotnet tool install --global dotnet-dump
 
 RUN curl -sL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null
+
 
 ENV AZ_REPO $(lsb_release -cs)
 RUN "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | tee /etc/apt/sources.list.d/azure-cli.list
